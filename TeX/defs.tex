@@ -1,0 +1,24 @@
+\usepackage{geometry}
+\geometry{A4}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{caption}
+\usepackage{indentfirst}
+\algnewcommand\algorithmicswitch{\textbf{switch}}
+\algnewcommand\algorithmiccase{\textbf{case}}
+\algdef{SE}[SWITCH]{Switch}{EndSwitch}[1]{\algorithmicswitch\ #1\ \algorithmicdo}{\algorithmicend\ \algorithmicswitch}%
+\algdef{SE}[CASE]{Case}{EndCase}[1]{\algorithmiccase\ #1}{\algorithmicend\ \algorithmiccase}%
+\algtext*{EndSwitch}%
+\algtext*{EndCase}%
+
+\DeclareCaptionFormat{algor}{%
+  \hrulefill\par\offinterlineskip\vskip1pt%
+    \textbf{#1#2}#3\offinterlineskip\hrulefill}
+\DeclareCaptionStyle{algori}{singlelinecheck=off,format=algor,labelsep=space}
+\captionsetup[algorithm]{style=algori}
+
+\usepackage{fontspec,xltxtra,xunicode}
+\defaultfontfeatures{Mapping=tex-text}
