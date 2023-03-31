@@ -7,11 +7,11 @@ public class ADTHeapNode<T> {
     private T value;
     private ADTHeapNode<T> left, right;
 
-    ADTHeapNode(T value) {
+    public ADTHeapNode(T value) {
         this(value, null, null);
     }
 
-    ADTHeapNode(T value, ADTHeapNode<T> left, ADTHeapNode<T> right) {
+    public ADTHeapNode(T value, ADTHeapNode<T> left, ADTHeapNode<T> right) {
         this.value = value;
         this.left = left;
         this.right = right;
