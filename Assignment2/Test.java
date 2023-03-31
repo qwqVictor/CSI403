@@ -5,6 +5,10 @@
 */
 public class Test {
     public static void main(String[] args) {
-        Helper.start();
+        String file = "testdata.csv";
+        if (args.length > 0) {
+            file = args[0];
+        }
+        Helper.start(file);
     }
 }

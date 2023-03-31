@@ -1,4 +1,4 @@
-SOURCES = ADTHeap.java
+SOURCES = ADTHeap.java ADTPriorityQueue.java Employee.java EmployeeComparatorByName.java EmployeeComparatorByPayRate.java
 TEST_SRCS = Test.java Helper.java
 
 test: $(SOURCES) $(TEST_SRCS)
