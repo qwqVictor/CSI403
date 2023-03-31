@@ -1,5 +1,5 @@
-SOURCES = ADTHeap.java ADTHeapNode.java
-TEST_SRCS = Driver.java Helper.java
+SOURCES = ADTHeap.java
+TEST_SRCS = Test.java Helper.java
 
 test: $(SOURCES) $(TEST_SRCS)
 	javac $(SOURCES) $(TEST_SRCS)
