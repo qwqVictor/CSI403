@@ -13,29 +13,55 @@ public class ADTHeap<T extends Comparable<T>> {
     private ArrayList<T> tree;
     private Comparator<T> comparator;
 
+    /**
+     * Default constructor
+     */
     public ADTHeap() {
         this(null);
     }
 
+    /**
+     * Constructor with comparator
+     * @param comparator Custom comparator
+     */
     public ADTHeap(Comparator<T> comparator) {
         this.tree = new ArrayList<T>();
         this.comparator = comparator;
     }
 
+    /**
+     * Constructor with size
+     * 
+     * @param size Allocated size
+     */
     public ADTHeap(int size) {
         this(size, null);
     }
 
+    /**
+     * Constructor with size and comparator
+     * 
+     * @param size Allocated size
+     * @param comparator Custom comparator
+     */
     public ADTHeap(int size, Comparator<T> comparator) {
         this.tree = new ArrayList<T>((1 << (int)(Math.log(size) / Math.log(2))) + 1);
         this.comparator = comparator;
     }
 
+    /**
+     * insert a new value into tree
+     * @param value the value to be inserted
+     */
     public void insert(T value) {
         this.tree.add(value);
         this.siftUp(this.tree.size() - 1);
     }
 
+    /**
+     * delete the root value from heap
+     * @return the root value
+     */
     public T delete() {
         T root = this.tree.get(0);
         T last = this.tree.get(this.tree.size() - 1);
@@ -45,10 +71,17 @@ public class ADTHeap<T extends Comparable<T>> {
         return root;
     }
 
+    /**
+     * Maintain the heap property
+     */
     public void heapify() {
         this.siftDown(0);
     }
 
+    /**
+     * Sort a list using this heap. Note all existing items will be CLEARED!!
+     * @param list the list to be sorted
+     */
     public void sort(List<T> list) {
         this.tree.clear();
         for (T value : list)
@@ -60,10 +93,18 @@ public class ADTHeap<T extends Comparable<T>> {
         }
     }
 
+    /**
+     * Get the top root
+     * @return the root value
+     */
     public T top() {
         return this.tree.get(0);
     }
 
+    /**
+     * Check whether the heap is empty
+     * @return if the heap is empty
+     */
     public boolean isEmpty() {
         return this.tree.isEmpty();
     }
@@ -87,6 +128,10 @@ public class ADTHeap<T extends Comparable<T>> {
         return (index - 1) >> 1;
     }
 
+    /**
+     * sift up from the bottom
+     * @param index to be sifted
+     */
     private void siftUp(int index) {
         if (index == 0) return;
         T current = this.tree.get(index);
@@ -98,6 +143,11 @@ public class ADTHeap<T extends Comparable<T>> {
         }
     }
 
+    /**
+     * sift down from the top
+     * 
+     * @param index to be sifted
+     */
     private void siftDown(int index) {
         int least = index;
         if (this.leftChild(index) < this.tree.size()
