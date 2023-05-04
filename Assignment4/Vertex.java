@@ -9,7 +9,7 @@ import java.util.ArrayList;
 /**
  * This class represents a vertex in a graph, which holds a certain value and a list of adjacent edges.
  * It implements the Comparable interface to compare vertices based on their values. 
- * @param <T> the type of the value to be held by the vertex, must implement Comparable<T>
+ * @param <T> the type of the value to be held by the vertex
  */
 public class Vertex<T extends Comparable<T>> implements Comparable<Vertex<T>> {
 
